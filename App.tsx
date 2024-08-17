@@ -8,12 +8,15 @@ export default function App() {
   return (
     <GluestackUIProvider mode="light">
       <View style={styles.container}>
-        <View style={{flex: 1}}>
-        <Text>Open up App.tsx to start working on your app!</Text>
-        </View>
-        <View style={{flex: 3, flexDirection: 'row'}}>
-        <Icon as={CheckIcon2} size='sm' className='text-typography-red'/>
-        <Icon as={CheckIcon} className='text-typography-500' />
+        <View style={{flex: 1, flexDirection: 'row'}}>
+          <View style={{flex: 1}}>
+            {/* Check Icon that needs to be "filled" */}
+            <Icon as={CheckIcon2} size='sm' className='text-black'/>
+          </View>
+          {/* Gluestack Check Icon (only needs `stroke`) */}
+          <View style={{flex: 1}}>
+            <Icon as={CheckIcon} size='sm' className='text-black' />
+          </View>
         </View>
         <StatusBar style="auto" />
       </View>
@@ -24,7 +27,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: '100%',
     flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'center',

@@ -176,10 +176,10 @@ const CheckIcon2 = createIcon({
     />
     </>
   ),
-  displayName: "CheckIcon2"
 });
-// CheckIcon2.displayName = "CheckIcon2";
+CheckIcon2.displayName = "CheckIcon2";
 export {CheckIcon2};
+
 // All Icons
 const AddIcon = createIcon({
   Root: Svg,
@@ -466,7 +466,6 @@ const CheckIcon = createIcon({
       />
     </>
   ),
-  displayName: 'CheckIcon'
 });
 
 const CheckCircleIcon = createIcon({
