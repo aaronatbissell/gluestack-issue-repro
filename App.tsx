@@ -5,6 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { AddIcon, CheckIcon, CheckIcon2, ChevronDownIcon, CircleIcon, createIcon, Icon } from './components/ui/icon';
 import { Path, Rect } from 'react-native-svg';
 import { Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectFlatList, SelectIcon, SelectInput, SelectItem, SelectPortal, SelectTrigger } from './components/ui/select';
+import { Input, InputField } from './components/ui/input';
 
 export default function App() {
 
@@ -35,16 +36,13 @@ export default function App() {
     ),
   });
 
-  const options = [{
-label: "Testing 1",
-value: "t1",
-  },{
-    label: "Testing 2",
-    value: "t2",
-      },{
-        label: "Testing 3",
-        value: "t3",
-          }]
+  let options = [];
+  for(let i=0; i<100; i++){
+    options.push({
+      label: `Testing ${i}`,
+      value: `t${i}`,
+        });
+  }
   
   return (
     <GluestackUIProvider mode="light">
@@ -65,8 +63,8 @@ value: "t1",
             <Icon as={CheckIcon} size='xl' className='text-secondary-500' />
             <Icon as={CheckIcon} size='xl' className='text-typography-950' />
           </View> */}
-          <View style={{flex: 1}}>
-            <Select selectedValue={options[1].value} initialLabel={options[1].label} isRequired={true}>
+          <View style={{flex: 1, backgroundColor: 'grey'}}>
+            {/* <Select selectedValue={options[1].value} initialLabel={options[1].label} isRequired={true}>
               <SelectTrigger variant="outline" size="xl">
                 <SelectInput placeholder="Select option" />
                 <SelectIcon className="mr-3" as={ChevronDownIcon} />
@@ -86,7 +84,16 @@ value: "t1",
                   />
                 </SelectContent>
               </SelectPortal>
-            </Select>
+            </Select> */}
+            <Input className='data-[focus=true]:border-custom-test'>
+            <InputField className='text-custom-test' />
+            </Input>
+            <Input className='data-[focus=true]:border-tertiary-500'>
+            <InputField className='text-tertiary-500'/>
+            </Input>
+            <Input className='data-[focus=true]:border-indicator-error'>
+            <InputField  className='text-indicator-error'/>
+            </Input>
           </View>
           
         </View>

@@ -153,6 +153,9 @@ export const config = {
     '--color-indicator-primary': '55 55 55',
     '--color-indicator-info': '83 153 236',
     '--color-indicator-error': '185 28 28',
+
+    /** Custom color */
+    '--color-custom-test': '255 255 0',
   }),
   dark: vars({
     '--color-primary-0': '130 130 130',
